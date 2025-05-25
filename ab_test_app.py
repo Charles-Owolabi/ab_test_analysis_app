@@ -129,7 +129,12 @@ with col1:
 
 # Second column with the corporate image and file uploader
 with col2:
-    st.image(corporate_img, caption="Marketing Analytics Environment", use_column_width=True)
+    #st.image(corporate_img, caption="Marketing Analytics Environment", use_column_width=True)
+    try:
+        st.image(corporate_img, caption="Marketing Analytics Environment", use_container_width=True)
+    except TypeError:
+        st.image(corporate_img, caption="Marketing Analytics Environment", width=None)
+
     st.markdown("""
     <style>
     .stImage > img { /* Target the img tag directly within .stImage for better specificity */
